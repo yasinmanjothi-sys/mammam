@@ -84,7 +84,7 @@ export default function Locations() {
                                             src={loc.imageSrc || ""}
                                             alt={`${loc.name} Map`}
                                             fill
-                                            className="object-cover"
+                                            className="object-contain"
                                         />
                                     </a>
                                 )}
