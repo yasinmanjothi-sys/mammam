@@ -1,0 +1,110 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "Monkey Hat";
+  src: url("/assets/fonts/MonkeyHat.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@theme {
+  --font-display: "Monkey Hat", sans-serif;
+  --font-body: var(--font-space);
+  --font-script: var(--font-pacifico);
+
+  --color-vermilion: #E34234;
+  --color-marigold: #FFBD00;
+  --color-kelly: #009E60;
+  --color-magenta: #FF00FF;
+  --color-indigo: #4B0082;
+  --color-mammam-blue: var(--color-kelly);
+  /* Mapping old blue to new kelly green for now */
+  --color-off-white: #F4F1EA;
+  --color-ink: #121212;
+}
+
+:root {
+  --background: #F4F1EA;
+  --foreground: #121212;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-body);
+}
+
+/* Utilities for Pop Art Style */
+@utility font-display {
+  font-family: var(--font-display);
+}
+
+@utility font-body {
+  font-family: var(--font-body);
+}
+
+@utility font-script {
+  font-family: var(--font-script);
+}
+
+@utility text-vermilion {
+  color: #E34234;
+}
+
+@utility bg-vermilion {
+  background-color: #E34234;
+}
+
+@utility text-marigold {
+  color: #FFB724;
+}
+
+@utility bg-marigold {
+  background-color: #FFBD00;
+}
+
+@utility text-kelly {
+  color: #009E60;
+}
+
+@utility bg-kelly {
+  background-color: #009E60;
+}
+
+@utility text-magenta {
+  color: #FF00FF;
+}
+
+@utility bg-magenta {
+  background-color: #FF00FF;
+}
+
+@utility text-indigo {
+  color: #4B0082;
+}
+
+@utility bg-indigo {
+  background-color: #4B0082;
+}
+
+@utility border-brutalist {
+  border: 3px solid #000;
+  box-shadow: 4px 4px 0px #000;
+}
+
+@utility border-brutalist-sm {
+  border: 2px solid #000;
+  box-shadow: 2px 2px 0px #000;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+}
