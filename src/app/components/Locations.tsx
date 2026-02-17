@@ -57,7 +57,7 @@ export default function Locations() {
     return (
         <section id="find-us" ref={containerRef} className="relative w-full py-20 md:py-32 bg-marigold text-black overflow-hidden border-t-8 border-black">
 
-            <div className="container mx-auto px-6 relative z-10">
+            <div className="container mx-auto px-0 md:px-6 relative z-10">
                 <h2 className="text-6xl md:text-8xl font-display font-black uppercase text-center mb-16 stroke-black"
                     style={{ WebkitTextStroke: "2px black", color: "black" }}>
                     Find Us
@@ -66,7 +66,7 @@ export default function Locations() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24">
                     {locations.map((loc, index) => (
                         <div key={index} className="location-card flex flex-col gap-6 items-center">
-                            <div className="bg-white border-4 border-black p-1 md:p-2 shadow-[8px_8px_0px_#000] md:rotate-1 hover:-rotate-1 transition-transform duration-300 relative aspect-video">
+                            <div className="bg-white border-4 border-black p-1 md:p-2 shadow-[8px_8px_0px_#000] md:rotate-1 hover:-rotate-1 transition-transform duration-300 relative aspect-video w-full">
                                 {loc.mapSrc ? (
                                     <iframe
                                         src={loc.mapSrc}
