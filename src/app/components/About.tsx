@@ -52,6 +52,7 @@ export default function About() {
                                 alt="Mammam Street Art"
                                 fill
                                 className="object-cover contrast-125"
+                                loading="lazy"
                             />
                         </div>
                     </div>

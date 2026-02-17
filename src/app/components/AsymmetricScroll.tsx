@@ -14,6 +14,8 @@ export default function AsymmetricScroll() {
     const containerRef = useRef<HTMLDivElement>(null);
     const leftColRef = useRef<HTMLDivElement>(null);
     const rightColRef = useRef<HTMLDivElement>(null);
+    const desktopVideoRef = useRef<HTMLVideoElement>(null);
+    const mobileVideoRef = useRef<HTMLVideoElement>(null);
 
     useEffect(() => {
         const ctx = gsap.context(() => {
@@ -29,6 +31,22 @@ export default function AsymmetricScroll() {
             // Left column is pinned, cards use CSS sticky
 
         }, containerRef);
+
+        // Ensure videos autoplay reliably
+        const playVideos = async () => {
+            try {
+                if (desktopVideoRef.current) {
+                    await desktopVideoRef.current.play();
+                }
+                if (mobileVideoRef.current) {
+                    await mobileVideoRef.current.play();
+                }
+            } catch (error) {
+                console.log('Video autoplay prevented:', error);
+            }
+        };
+
+        playVideos();
 
         return () => ctx.revert();
     }, []);
@@ -52,11 +70,13 @@ export default function AsymmetricScroll() {
                     <div className="relative z-20 w-full aspect-[3/4] border-4 border-black shadow-[12px_12px_0px_#000] rotate-[-3deg] bg-white p-4">
                         <div className="relative w-full h-full border-2 border-black overflow-hidden bg-black">
                             <video
+                                ref={desktopVideoRef}
                                 src="/assets/vertical-scroll-video.mp4"
                                 autoPlay
                                 muted
                                 loop
                                 playsInline
+                                preload="auto"
                                 className="w-full h-full object-cover contrast-125"
                             />
                         </div>
@@ -78,11 +98,13 @@ export default function AsymmetricScroll() {
                     <div className="relative z-20 w-[80%] aspect-[3/4] border-4 border-black shadow-[8px_8px_0px_#000] rotate-[-2deg] bg-white p-2">
                         <div className="relative w-full h-full border-2 border-black overflow-hidden bg-black">
                             <video
+                                ref={mobileVideoRef}
                                 src="/assets/vertical-scroll-video.mp4"
                                 autoPlay
                                 muted
                                 loop
                                 playsInline
+                                preload="auto"
                                 className="w-full h-full object-cover contrast-125"
                             />
                         </div>

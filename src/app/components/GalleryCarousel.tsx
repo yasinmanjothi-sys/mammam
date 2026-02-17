@@ -53,6 +53,7 @@ export default function GalleryCarousel() {
                                         fill
                                         className="object-cover transition-all duration-500 contrast-125"
                                         sizes="(max-width: 768px) 300px, 400px"
+                                        loading={index < 4 ? "eager" : "lazy"}
                                     />
                                 </div>
                             </div>
