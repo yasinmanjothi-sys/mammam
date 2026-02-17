@@ -65,7 +65,7 @@ export default function Locations() {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24">
                     {locations.map((loc, index) => (
-                        <div key={index} className="location-card flex flex-col gap-6">
+                        <div key={index} className="location-card flex flex-col gap-6 items-center">
                             <div className="bg-white border-4 border-black p-1 md:p-2 shadow-[8px_8px_0px_#000] md:rotate-1 hover:-rotate-1 transition-transform duration-300 relative aspect-video">
                                 {loc.mapSrc ? (
                                     <iframe
